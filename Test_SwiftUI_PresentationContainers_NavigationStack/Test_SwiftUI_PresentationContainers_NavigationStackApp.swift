@@ -10,21 +10,15 @@ import SwiftUI
 // links:
 // https://www.hackingwithswift.com/articles/250/whats-new-in-swiftui-for-ios-16
 // https://www.youtube.com/watch?v=dZdHJQT7Z4Y
-
-
-final class Router: ObservableObject {
-    @Published var path = NavigationPath()
-}
+// https://swiftwithmajid.com/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/
+// https://swiftwithmajid.com/2022/06/21/mastering-navigationstack-in-swiftui-deep-linking/
 
 @main
 struct Test_SwiftUI_PresentationContainers_NavigationStackApp: App {
     
-    let router = Router()
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(router)
         }
     }
 }

@@ -7,10 +7,26 @@
 
 import SwiftUI
 
+struct Company: Identifiable , Hashable {
+    // we make it Identifiable so that it is better used in List or ForEach
+    // we make it Hashable to use it in NavigationLink(value: Hashable)
+    var id = UUID()
+    var name: String
+}
+
 struct Tab2: View {
+    
+    let companies: [Company] = [
+        .init(name: "Apple"),
+        .init(name: "Intel"),
+        .init(name: "Facebook"),
+        .init(name: "Microsoft")
+    ]
+    
     var body: some View {
         NavigationStack {
             List(1..<4) { i in
+                // NOTICE: This navigation triggers appropriate .navigationDestination modifier
                 NavigationLink(value: i) {
                     Label("Row \(i) (link)", systemImage: "globe")
                 }
@@ -21,13 +37,44 @@ struct Tab2: View {
             }
             .padding()
             
-            // NOTICE: .navigationDestination can be used anywhere in the view BUT it must be used in the same view (inside) NavigationStack
+            NavigationLink("Red", value: Color.red)
+            
+            List(companies) { company in
+                NavigationLink(company.name, value: company)
+            }
+            .padding()
+            
+            // NOTICE:
+            // .navigationDestination provides the destination from the NavigationLink(value:). It differentiates the NavigationLinks by their "values"
+            // .navigationDestination can be used anywhere in the view BUT it must be used in the same view (inside) NavigationStack
+            // you can build a navigation stack (a navigation "tree" with "branches") by the usage of .navigationDestination modifiers provided at the root view or NavigationStack
+            // see: https://www.hackingwithswift.com/articles/250/whats-new-in-swiftui-for-ios-16
+            // "That might seem little different from what we had before, but this new approach to navigation makes it much easier to create deep links, to handle state restoration, and also to jump to arbitrary places in our navigation – perhaps to push several views at once, or to pop all our views and return to the root."
             .navigationDestination(for: Int.self) { i in
+                // NOTICE: This navigation also triggers appropriate .navigationDestination modifier (it doesn't care that it is inside one of them)
                 NavigationLink(value: i) {
                     Text("Link to layer 2")
                 }
                 Text("Destination from row \(i)")
                     .navigationTitle("Tab2 - layer 1")
+            }
+            
+            .navigationDestination(for: Double.self) { d in
+                NavigationLink(value: d) {
+                    Text("Link to layer 2")
+                }
+                Text("Destination by value: \(d)")
+                    .navigationTitle("Tab2 - layer 1")
+            }
+            
+            .navigationDestination(for: Color.self) { color in
+                Text("Destination with color")
+                    .background(color)
+            }
+            
+            .navigationDestination(for: Company.self) { company in
+                Text(company.name)
+                    .navigationTitle("Company name")
             }
             
             .navigationTitle("Tab2 - layer 0")

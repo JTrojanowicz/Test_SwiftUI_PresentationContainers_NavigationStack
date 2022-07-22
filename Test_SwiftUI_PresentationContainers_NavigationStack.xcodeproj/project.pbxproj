@@ -11,6 +11,7 @@
 		EF45691D28881B26008F0C00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF45691C28881B26008F0C00 /* ContentView.swift */; };
 		EF45691F28881B26008F0C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF45691E28881B26008F0C00 /* Assets.xcassets */; };
 		EF45692228881B26008F0C00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF45692128881B26008F0C00 /* Preview Assets.xcassets */; };
+		EF7E0EFE288AEE0500D8A6D3 /* Tab4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E0EFD288AEE0500D8A6D3 /* Tab4.swift */; };
 		EFE6BF12288A5D1C007E9CD6 /* Tab1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */; };
 		EFE6BF14288A5D51007E9CD6 /* Tab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF13288A5D51007E9CD6 /* Tab2.swift */; };
 		EFE6BF16288A5D5A007E9CD6 /* Tab3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */; };
@@ -22,6 +23,7 @@
 		EF45691C28881B26008F0C00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF45691E28881B26008F0C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF45692128881B26008F0C00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF7E0EFD288AEE0500D8A6D3 /* Tab4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4.swift; sourceTree = "<group>"; };
 		EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1.swift; sourceTree = "<group>"; };
 		EFE6BF13288A5D51007E9CD6 /* Tab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2.swift; sourceTree = "<group>"; };
 		EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */,
 				EFE6BF13288A5D51007E9CD6 /* Tab2.swift */,
 				EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */,
+				EF7E0EFD288AEE0500D8A6D3 /* Tab4.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				EFE6BF12288A5D1C007E9CD6 /* Tab1.swift in Sources */,
 				EF45691D28881B26008F0C00 /* ContentView.swift in Sources */,
+				EF7E0EFE288AEE0500D8A6D3 /* Tab4.swift in Sources */,
 				EFE6BF16288A5D5A007E9CD6 /* Tab3.swift in Sources */,
 				EFE6BF14288A5D51007E9CD6 /* Tab2.swift in Sources */,
 				EF45691B28881B26008F0C00 /* Test_SwiftUI_PresentationContainers_NavigationStackApp.swift in Sources */,
