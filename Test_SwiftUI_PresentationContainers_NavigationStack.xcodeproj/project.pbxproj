@@ -11,6 +11,9 @@
 		EF45691D28881B26008F0C00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF45691C28881B26008F0C00 /* ContentView.swift */; };
 		EF45691F28881B26008F0C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF45691E28881B26008F0C00 /* Assets.xcassets */; };
 		EF45692228881B26008F0C00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF45692128881B26008F0C00 /* Preview Assets.xcassets */; };
+		EFE6BF12288A5D1C007E9CD6 /* Tab1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */; };
+		EFE6BF14288A5D51007E9CD6 /* Tab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF13288A5D51007E9CD6 /* Tab2.swift */; };
+		EFE6BF16288A5D5A007E9CD6 /* Tab3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		EF45691C28881B26008F0C00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF45691E28881B26008F0C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF45692128881B26008F0C00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1.swift; sourceTree = "<group>"; };
+		EFE6BF13288A5D51007E9CD6 /* Tab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2.swift; sourceTree = "<group>"; };
+		EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				EF45691A28881B26008F0C00 /* Test_SwiftUI_PresentationContainers_NavigationStackApp.swift */,
-				EF45691C28881B26008F0C00 /* ContentView.swift */,
+				EFBD713928894D5A006CD31C /* Views */,
 				EF45691E28881B26008F0C00 /* Assets.xcassets */,
 				EF45692028881B26008F0C00 /* Preview Content */,
 			);
@@ -65,6 +71,17 @@
 				EF45692128881B26008F0C00 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFBD713928894D5A006CD31C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF45691C28881B26008F0C00 /* ContentView.swift */,
+				EFE6BF11288A5D1C007E9CD6 /* Tab1.swift */,
+				EFE6BF13288A5D51007E9CD6 /* Tab2.swift */,
+				EFE6BF15288A5D5A007E9CD6 /* Tab3.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE6BF12288A5D1C007E9CD6 /* Tab1.swift in Sources */,
 				EF45691D28881B26008F0C00 /* ContentView.swift in Sources */,
+				EFE6BF16288A5D5A007E9CD6 /* Tab3.swift in Sources */,
+				EFE6BF14288A5D51007E9CD6 /* Tab2.swift in Sources */,
 				EF45691B28881B26008F0C00 /* Test_SwiftUI_PresentationContainers_NavigationStackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +300,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "JTrojanowicz.Test-SwiftUI-PresentationContainers-NavigationStack";
+				PRODUCT_BUNDLE_IDENTIFIER = "JT.Test-SwiftUI-PresentationContainers-NavigationStack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,7 +329,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "JTrojanowicz.Test-SwiftUI-PresentationContainers-NavigationStack";
+				PRODUCT_BUNDLE_IDENTIFIER = "JT.Test-SwiftUI-PresentationContainers-NavigationStack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
