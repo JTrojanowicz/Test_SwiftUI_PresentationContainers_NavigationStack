@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Cloth: Identifiable, Hashable {
-    var id = UUID()
+    var id: String { return name } // to conform with Identifiable protocol
     var name: String
 }
 
@@ -21,31 +21,29 @@ struct Tab3: View {
         .init(name: "suit")
     ]
     
-    @State private var path: [Cloth] = []
+    @State private var path: [Cloth] = [] // when the destination views are based on the same value, the navigation path can be just an array of those values (simple form).
     
     var body: some View {
         NavigationStack(path: $path) {
+            Text("Tab3 presents the functionality of .navigationDestination modifier and (simple) navigation path. This gives a power of programatic navigation.")
+                .font(.caption)
+            
             List(clothes) { cloth in
                 NavigationLink(cloth.name, value: cloth)
             }
+            
+            // .navigationDestination needs to be inside NavigationStack or NavigationSplitView
             .navigationDestination(for: Cloth.self) { cloth in
-//                Text("Hierarchy level: \(path.count)") // this doesn't work... I don't know why...
-                Text(cloth.name)
-                Button("Push a suit on the nav hierarchy") {
-                    path.append(Cloth(name: "suit"))
-                    let _ = print("hej!")
-                }
-                .padding()
-                Button("Push 2 levels up in the hierarchy") {
-                    path.append(contentsOf: [Cloth(name: "socks"), Cloth(name: "trousers")])
-                }
-                Button("Go back to root in the nav hierarchy") {
-                    path.removeAll()
-                }
-                .padding()
-                .navigationTitle("Name of a cloth")
+                NavTestView(navigationPath: $path)                
             }
+            
+            .navigationTitle("Tab3")
         }
+        .onChange(of: path, perform: onChangePath)
+    }
+    
+    private func onChangePath(path: [Cloth]) {
+        print("path.counter = \(path.count)") //just to observe what is happening with the path
     }
 }
 

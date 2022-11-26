@@ -25,33 +25,39 @@ struct Tab2: View {
     
     var body: some View {
         NavigationStack {
+            Text("Tab2 presents the functionality of .navigationDestination modifier.\nIn this case NavigationLink does not contain the destination view, but it contains value which .navigationDestination modifier recognises and pushes on the navigationDestination appropriate destinationview")
+                .font(.caption)
+            
             List(1..<4) { i in
-                // NOTICE: This navigation triggers appropriate .navigationDestination modifier
-                NavigationLink(value: i) {
-                    Label("Row \(i) (link)", systemImage: "globe")
+                HStack {
+                    Text("Text") // text will also be "tapable" when the NavigationLink appears in the row
+                    NavigationLink(value: i) {
+                        Label("Row \(i) (link)", systemImage: "globe")
+                        Text("Text2")
+                    }
                 }
             }
             
             NavigationLink(value: 1.0) {
                 Text("Text outside List (link)")
             }
-            .padding()
             
             NavigationLink("Red", value: Color.red)
             
             List(companies) { company in
                 NavigationLink(company.name, value: company)
             }
-            .padding()
             
             // NOTICE:
             // .navigationDestination provides the destination from the NavigationLink(value:). It differentiates the NavigationLinks by their "values"
-            // .navigationDestination can be used anywhere in the view BUT it must be used in the same view (inside) NavigationStack
+            // .navigationDestination can be used anywhere in the view BUT it must be used in the same view (inside) NavigationStack. It is recommended to use it outside of lazy views (but still inside its NavigationStack)
             // you can build a navigation stack (a navigation "tree" with "branches") by the usage of .navigationDestination modifiers provided at the root view or NavigationStack
             // see: https://www.hackingwithswift.com/articles/250/whats-new-in-swiftui-for-ios-16
             // "That might seem little different from what we had before, but this new approach to navigation makes it much easier to create deep links, to handle state restoration, and also to jump to arbitrary places in our navigation – perhaps to push several views at once, or to pop all our views and return to the root."
             .navigationDestination(for: Int.self) { i in
-                // NOTICE: This navigation also triggers appropriate .navigationDestination modifier (it doesn't care that it is inside one of them)
+                // NOTICE: Here is the destination view:
+                
+                // NOTICE: This navigation also triggers appropriate .navigationDestination modifier (it doesn't care that it is inside one of them) -- if used this way it will provide endless number of views that can be pushed onto navigation stack
                 NavigationLink(value: i) {
                     Text("Link to layer 2")
                 }
@@ -68,7 +74,7 @@ struct Tab2: View {
             }
             
             .navigationDestination(for: Color.self) { color in
-                Text("Destination with color")
+                Text("Destination View with appropriate background color")
                     .background(color)
             }
             

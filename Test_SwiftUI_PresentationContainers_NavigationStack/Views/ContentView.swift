@@ -22,6 +22,8 @@ struct ContentView: View {
                 .tabItem { Label("Tab3", systemImage: "3.square") }
             Tab4()
                 .tabItem { Label("Tab4", systemImage: "4.square") }
+            Tab5()
+                .tabItem { Label("Tab5", systemImage: "5.square") }
         }
     }
 }

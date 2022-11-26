@@ -7,24 +7,25 @@
 
 import SwiftUI
 
-/*
- This is the simplest application of NavigationStack
- */
-
 struct Tab1: View {
     var body: some View {
         NavigationStack {
-            List(1..<3) { i in
-                NavigationLink("Row \(i) Link") {
-                    // NOTICE: Second layer is pushed on the first layer but without animation and without updating the Back button (it looks like this method can be used only when navigating to layer 1)
-                    NavigationLink("Link to layer 2") {
-                        Text("Destination from row \(i) - layer 2")
-                        // NOTICE: You still CAN change the navigation title
-                            .navigationTitle("Tab1 - layer 2")
-                    }
-                    Text("Destination from row \(i) - layer 1")
-                    // NOTICE: You can change the navigation title
-                        .navigationTitle("Tab1 - layer 1")
+            Text("Tab1 presents the simplest application of the navigation:\nNavigationLinks can push a destination view on the navigation stack. This doesn't give an opportunity for programatic navigation (only using BACK functionality is possible)")
+                .font(.caption)
+            List(1..<3) { rowNumber in
+                NavigationLink("Row \(rowNumber) Link") {
+                    
+                    // NOTICE: NavigationLinks can be nested
+                    NavigationLink(destination: { // NOTICE: you can choose between a few init functions (here is init(destinatio:..., label:...) used)
+                        Text("Destination from row \(rowNumber) - layer 2")
+                            .navigationTitle("Tab1 - layer 2") // NOTICE: You can change the navigation title
+                    }, label: {
+                        Text("Link to layer 2")
+                    })
+                    
+                    Text("Destination from row \(rowNumber) - layer 1")
+                        .padding()
+                        .navigationTitle("Tab1 - layer 1") // NOTICE: You can change the navigation title
                 }
             }
             
